@@ -21,22 +21,48 @@
 	  # text editors
 	  pkgs.vim
 	  pkgs.nano
+	  # pkgs.sublime4
 	  # terminal
 	  pkgs.alacritty
+	  #cli-tools
+	  pkgs.git
+	  pkgs.zoxide
+	  pkgs.eza
+	  pkgs.mas
+	  pkgs.neofetch
+	  pkgs.python311
+	  #wm
+	  pkgs.aerospace
 	  # apps
 	  pkgs.obsidian
+	  pkgs.aldente
+	  pkgs.remmina
+	  # ide
+	  pkgs.vscode
+	  # browsers
         ];
 
       homebrew = {
 	enable = true;
 	brews = [
-	  "mas"
+	  "borders"
+	  "powerlevel10k"
+	  "zsh-autosuggestions"
+	  "zsh-syntax-highlighting"
 	];
 	casks = [
 	  "iina"
 	  "the-unarchiver"
 	  "google-chrome"
+	  "firefox"
 	  "sublime-text"
+	  "discord"
+	  "wezterm"
+	  "font-meslo-lg-nerd-font"
+	  "spotify"
+	];
+	taps = [
+	  "FelixKratz/formulae"
 	];
 	masApps = {
 	  "Prime" = 545519333;
@@ -45,8 +71,12 @@
 	  "MSPowerPoint" = 462062816;
 	  "MSOutlook" = 985367838;
 	  "OneDrive" = 823766827;
+	  "ColorPicker" = 1545870783;
+	  "WhatsApp" = 310633997;
 	};
 	onActivation.cleanup = "zap";
+	onActivation.autoUpdate = true;
+	onActivation.upgrade = true;
       };
 
       fonts.packages = [
@@ -72,6 +102,16 @@
     	  ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
   	done
       	    '';
+
+      system.defaults = {
+	dock.autohide = true;
+        dock.persistent-apps = [
+	  #"${wezterm}/Applications/WezTerm.app"
+	  "/System/Applications/Launchpad.app"
+	  "/Applications/WezTerm.app"
+	  "/Applications/Google Chrome.app"
+	];
+      };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
