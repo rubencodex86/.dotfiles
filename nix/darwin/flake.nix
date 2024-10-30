@@ -21,17 +21,18 @@
 	  # text editors
 	  pkgs.vim
 	  pkgs.nano
-	  # pkgs.sublime4
+	  pkgs.neovim
+	  #pkgs.sublime4
 	  # terminal
 	  pkgs.alacritty
-	  #cli-tools
+	  # cli-tools
 	  pkgs.git
 	  pkgs.zoxide
 	  pkgs.eza
 	  pkgs.mas
 	  pkgs.neofetch
 	  pkgs.python311
-	  #wm
+	  # wm
 	  pkgs.aerospace
 	  # apps
 	  pkgs.obsidian
@@ -40,6 +41,8 @@
 	  # ide
 	  pkgs.vscode
 	  # browsers
+	  # trading
+	  # pkgs.tradingview
         ];
 
       homebrew = {
@@ -60,6 +63,9 @@
 	  "wezterm"
 	  "font-meslo-lg-nerd-font"
 	  "spotify"
+	  "notion"
+	  "anydesk"
+	  "tradingview"
 	];
 	taps = [
 	  "FelixKratz/formulae"
@@ -73,6 +79,7 @@
 	  "OneDrive" = 823766827;
 	  "ColorPicker" = 1545870783;
 	  "WhatsApp" = 310633997;
+	  "MTJ" = 1557277865;
 	};
 	onActivation.cleanup = "zap";
 	onActivation.autoUpdate = true;
@@ -108,8 +115,23 @@
         dock.persistent-apps = [
 	  #"${wezterm}/Applications/WezTerm.app"
 	  "/System/Applications/Launchpad.app"
-	  "/Applications/WezTerm.app"
 	  "/Applications/Google Chrome.app"
+	  "/Applications/WezTerm.app"
+	  "/Applications/Discord.app"
+	  "/Applications/Spotify.app"
+	  "/Applications/Prime Video.app"
+	  "/Applications/OneDrive.app"
+	  "/Applications/Microsoft Excel.app"
+	  "/Applications/Microsoft Word.app"
+	  "/Applications/Sublime Text.app"
+	  "/System/Applications/TextEdit.app"
+	  "/System/Applications/Calculator.app"
+	  "/System/Applications/Calendar.app"
+	  "/System/Applications/Home.app"
+	  "/System/Applications/Time Machine.app"
+	  "/System/Applications/App Store.app"
+	  "/System/Applications/System Settings.app"
+	  "/System/Applications/Utilities/Screenshot.app"
 	];
       };
 
